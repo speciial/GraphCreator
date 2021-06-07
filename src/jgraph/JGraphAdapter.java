@@ -13,6 +13,7 @@ import com.mxgraph.util.mxCellRenderer;
 import eingabe.DialogInputs;
 import eingabe.ExportInputs;
 import eingabe.ExportInputsWOVis;
+import exporter.ADExerciseExporter;
 import exporter.OwnExporter;
 import importer.OwnImporter;
 import java.awt.Color;
@@ -507,9 +508,25 @@ public class JGraphAdapter extends JApplet {
             //fehler muss noch zurückgegeben werden 
             exporter.exportGraph();
             this.graphFormatsaved(ownFile.getName());
-
         }
+    }
 
+    // graph in ADEx Dateiformat speichern
+    public void saveGraphToADEx() {
+        FileChooser fileChooser = new FileChooser();
+        File ownFile = fileChooser.showSaveDialog(null);
+        String suffix = ".txt";
+        if (ownFile != null) {
+            if (!ownFile.toString().contains(suffix)) {
+                ownFile = new File(ownFile.toString() + suffix);
+            }
+            // OwnExporter exporter = new OwnExporter(this.activeGraph, ownFile.toString());
+            ADExerciseExporter exporter = new ADExerciseExporter(this.activeGraph, ownFile.toString());
+
+            //fehler muss noch zurückgegeben werden
+            exporter.exportGraph();
+            this.graphFormatsaved(ownFile.getName());
+        }
     }
 
     //Dialogfenster erfolgsfall des speichern

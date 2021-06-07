@@ -71,6 +71,10 @@ public class AusgabeVC extends ViewController {
         this.jGraph.saveGraph();
     }
 
+    public void exportGraphToADEx() {
+        this.jGraph.saveGraphToADEx();
+    }
+
     public mxGraphWithInfo importGraphFromOwnFormat() throws IOException {
         return this.jGraph.importGraphFromOwnFormat();
     }

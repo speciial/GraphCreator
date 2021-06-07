@@ -23,6 +23,7 @@
                   </Menu>
                   <MenuItem fx:id="openGraph" mnemonicParsing="false" onAction="#openFileButton" text="Öffnen" />
                   <MenuItem fx:id="menuItemSave" mnemonicParsing="false" onAction="#saveGraph" text="Graph Speichern" />
+                  <MenuItem fx:id="menuItemSaveToADEx" mnemonicParsing="false" onAction="#saveGraphToADEx" text="Graph Speichern als ADEx" />
                   <MenuItem fx:id="exportProject" mnemonicParsing="false" onAction="#exportProject" text="Export" />
             </items>
           </Menu>

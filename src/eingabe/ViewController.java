@@ -82,6 +82,8 @@ public class ViewController implements Initializable {
     @FXML
     private MenuItem menuItemSave;
     @FXML
+    private MenuItem menuItemSaveToADEx;
+    @FXML
     private MenuItem exportProject;
     @FXML
     private MenuItem openGraph;
@@ -138,6 +140,7 @@ public class ViewController implements Initializable {
         this.newGraph.setDisable(true);
         this.openGraph.setDisable(true);
         this.menuItemSave.setDisable(false);
+        this.menuItemSaveToADEx.setDisable(false);
         this.exportProject.setDisable(false);
         this.activeProject = true;
     }
@@ -176,13 +179,15 @@ public class ViewController implements Initializable {
         }
     }
 
-    
-
     //graph im .graph format speichern
     @FXML
     public void saveGraph() throws ExportException {
-
         this.avc.exportGraphToOwnFormat();
+    }
+
+    @FXML
+    public void saveGraphToADEx() throws ExportException {
+        this.avc.exportGraphToADEx();
     }
 
     //visualisierung der Lösung eines Graphen mit dem Dijkstra algorithmus
